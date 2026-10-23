@@ -10,7 +10,7 @@ const defaultSettings = {
   title:"Date Dagen!", welcome:"I dag skal vi ha en helt fantastisk dag, med masse kos, latter og kjærlighet! Æ elske dæ ♡",
   date:new Date().toLocaleDateString("en-CA"), note:"Ho som æ glede mæ til å dele hele livet med.\nÆ e verdens heldigste mann ♡",
   welcomeMessage:"Hei verdens beste kjæreste! Æ har gleda mæ sånn for dagen i dag!!! Idag skal vi kose oss masse, og ikke stresse om en eneste ting ♡",
-  letter:"Jeg ville bare minne deg på hvor utrolig glad jeg er for at akkurat du er en del av livet mitt.\n\nTakk for alle de små tingene du gjør, for latteren, tryggheten og alle minnene vi allerede har laget. Jeg gleder meg til alt vi fortsatt har foran oss.\n\nI dag handler om oss. ♡"
+  letter:"Hei kjære,\n\nEller også kalt verdens mest perfekte, enestående, imponerende, og uerstattelige kjæresten min.\n\nÆ ville bare skrive et lite 'brev' til deg for å takke for alle tingene du gjør for mæ, alt fra de store til de små tingene. Vit at ingenting går forbi ubemerka.\n\nÆ vil også takke for all latteren du gir mæ hver eneste dag, og den tryggheten du gir mæ - som æ aldri har følt på før. Du har alltid føltes ut som det æ alltid mangla i livet. Du gjør virkelig mæ og mitt liv komplett. \n\nDu er virkelig det fineste og beste som har skjedd mæ, og æ elske at du ikke bare gjør livet mitt ufattelig mye bedre, men du pushe og motivere mæ også til å bli den beste versjonen av mæ selv. Noe som æ sett uendelig stor pris på.\n\nSå vil æ bare si at æ e så ufattelig takknemlig for hver eneste dag æ får sammen med dæ. Tanken på at vi no skal flytte sammen - og at æ får dele hverdagen, og de små og store øyeblikkan med dæ, det gjør mæ mildt sagt til verdens heldigste mann. \n\nHelt ærlig så får æ ikke helt beskrevet kor mye alt det her betyr for mæ med ord... For det å få bygge et liv sammen med dæ - det e alt æ noen gang har ønska mæ. Æ blir faktisk rørt av tanken... og tom for ord. (Felle tåra når æ skriv det her..)\n\nVit at du alltid har vært min største bragd og stolthet, og æ e så vanvittig stolt av den personen du e, og alt du får til. Tenk at du faktisk er min... Æ får aldri nokk av dæ\n\nÆ elske dæ mer enn ord kan beskrive, og æ håpe du kose dæ masse idag ♡"
 };
 const palettes = {
   pink:{bg:"linear-gradient(145deg,#ffe5ec,#ffedf0)",border:"#f8c9d7",accent:"#e85e92"},
@@ -167,7 +167,7 @@ document.getElementById("startDay").addEventListener("click",()=>{
   window.scrollTo(0,0);
   intro.classList.add("leaving");
   setTimeout(()=>{intro.hidden=true;},650);
-  showToast("Da starter eventyret deres ♡");
+  showToast("DATE DAG! ♡");
 });
 document.getElementById("letterClose").addEventListener("click",closeLetter);
 document.getElementById("letterDone").addEventListener("click",closeLetter);
