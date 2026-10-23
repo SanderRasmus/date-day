@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fff0f3" />
+  <title>Date dag med Babe! ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="intro-active">
+  <section class="intro" id="intro" aria-labelledby="welcomeHeading">
+    <span class="intro-heart ih-1" aria-hidden="true">♡</span>
+    <span class="intro-heart ih-2" aria-hidden="true">♡</span>
+    <span class="intro-heart ih-3" aria-hidden="true">♡</span>
+    <div class="intro-card">
+      <span class="welcome-sparkle" aria-hidden="true">✦</span>
+      <p class="script welcome-kicker">Endelig er det lørdag!!!!</p>
+      <h1 id="welcomeHeading">Er du klar for vår Date dag!?</h1>
+      <p id="welcomeMessage">Hei verdens beste kjæreste! Idag skal vi kose oss masse sammen! Og det er ingen stress i verden idag, bare kos og avslapping ♡</p>
+      <button class="start-button" id="startDay">Start vår DATE DAG! <span>♡</span></button>
+    </div>
+  </section>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Date dag med Babe! "><span class="brand-heart">♡</span> DATE DAG!!</a>
+    <nav class="desktop-nav" aria-label="Hovedmeny">
+      <a class="nav-link active" href="#agenda">▦ <span>Dagens agenda</span></a>
+      <a class="nav-link" href="#ourday">♡ <span>Vår dag</span></a>
+    </nav>
+    <button class="nav-heart" id="editOpenTop" aria-label="Tilpass Date Day">⚙</button>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="script welcome" id="heroWelcome">Velkommen til den fantastiske og romantiske</p>
+        <h1 id="heroTitle">Date Dagen!<span class="title-heart">♡</span></h1>
+        <p class="hero-copy" id="heroCopy">En hel dag sammen, fylt med gode opplevelser,<br class="desktop-only"> latter, kos og masse kjærlighet! ♡</p>
+        <div class="hero-buttons">
+          <div class="date-pill">▦ <span id="dateLabel">Vår spesielle dag</span></div>
+          <button class="edit-hero-button" id="editOpenHero">✎ Tilpass dagen</button>
+        </div>
+      </div>
+      <p class="hero-note script" id="heroNote">Ho som æ glede mæ til å dele hele livet med.<br> Æ e verdens heldigste mann ♡</p>
+    </section>
+
+
+    <section class="agenda-section section-wrap" id="agenda">
+      <div class="section-heading">
+        <span class="heading-heart">♡</span>
+        <div>
+          <h2 class="script">Dagens agenda</h2>
+          <p>Trykk på en aktivitet for å se mer!</p>
+        </div>
+        <span class="heading-heart">♡</span>
+      </div>
+      <div class="progress-area">
+        <div class="progress-label"><span id="progressText">0 av 6 aktiviteter gjennomført</span><span id="progressPercent">0%</span></div>
+        <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+      </div>
+      <div class="agenda-toolbar">
+        <p>En plan, men ikke en fasit. Vi skal kose oss og ha en superfin dag sammen ♡</p>
+        <button class="small-outline-button" id="editOpenAgenda">✎ Rediger agenda</button>
+      </div>
+      <div class="agenda-grid" id="agendaGrid"></div>
+    </section>
+
+    <section class="love-note section-wrap" id="ourday">
+      <span class="floating-heart heart-one">♡</span>
+      <div>
+        <h2 class="script">Takk for at du er deg</h2>
+        <p>Du gjør hver eneste dag litt mer spesiell. ♡</p>
+      </div>
+      <span class="floating-heart heart-two">♡</span>
+    </section>
+  </main>
+
+  <!-- Activity popup -->
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <section class="activity-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Lukk">×</button>
+      <div class="modal-image" id="modalImage"></div>
+      <div class="modal-content">
+        <p class="modal-time" id="modalTime"></p>
+        <h2 id="modalTitle"></h2>
+        <p id="modalDescription"></p>
+        <div class="sweet-reminder"><span>♡</span><p id="modalReminder"></p></div>
+        <div class="modal-footer">
+          <button class="complete-button" id="completeButton">♡ Marker som gjennomført</button>
+          <button class="edit-this-button" id="editThisActivity">✎ Rediger denne aktiviteten</button>
+          <button class="next-button" id="nextButton">Neste aktivitet →</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Customize day / agenda popup -->
+  <div class="modal-backdrop" id="editBackdrop" hidden>
+    <section class="editor-modal" role="dialog" aria-modal="true" aria-labelledby="editorTitle">
+      <button class="modal-close" id="editClose" aria-label="Lukk">×</button>
+      <div class="editor-content">
+        <p class="script editor-kicker">Gjør den til deres ♡</p>
+        <h2 id="editorTitle">Tilpass Date Day</h2>
+        <p class="editor-intro">Endringene lagres i nettleseren på denne enheten.</p>
+        <div class="editor-tabs">
+          <button class="editor-tab active" data-tab="day">Vår dag</button>
+          <button class="editor-tab" data-tab="activities">Aktiviteter</button>
+        </div>
+        <div id="dayEditor" class="editor-pane">
+          <label>Navn på dagen<input id="settingTitle" type="text" maxlength="40" placeholder="Date Day"></label>
+          <label>Velkomsttekst<textarea id="settingWelcome" rows="2" maxlength="180"></textarea></label>
+          <label>Dato<input id="settingDate" type="date"></label>
+          <label>Liten romantisk tekst<textarea id="settingNote" rows="2" maxlength="100"></textarea></label>
+          <label>Personlig melding på velkomstsiden<textarea id="settingWelcomeMessage" rows="3" maxlength="280"></textarea></label>
+          <label>Hemmelig kjærlighetsbrev<textarea id="settingLetter" rows="5" maxlength="1500" placeholder="Skriv noe fra hjertet…"></textarea></label>
+        </div>
+        <div id="activitiesEditor" class="editor-pane" hidden>
+          <label>Velg aktivitet<select id="activitySelector"></select></label>
+          <label>Tidspunkt<input id="activityTimeInput" type="text" maxlength="20" placeholder="09:00"></label>
+          <label>Overskrift<input id="activityTitleInput" type="text" maxlength="70"></label>
+          <label>Kort tekst på kortet<textarea id="activityShortInput" rows="2" maxlength="180"></textarea></label>
+          <label>Detaljert beskrivelse<textarea id="activityDescriptionInput" rows="4" maxlength="500"></textarea></label>
+          <label>Romantisk påminnelse<textarea id="activityReminderInput" rows="2" maxlength="180"></textarea></label>
+          <label>Bilde-URL<input id="activityImageInput" type="url" placeholder="https://…"></label>
+          <p class="editor-hint">Tips: Du kan bruke en direkte lenke til et bilde. La feltet stå tomt for å beholde standardbildet.</p>
+          <button class="save-button" id="saveActivityEdit">Lagre aktivitet ♡</button>
+        </div>
+        <div class="editor-actions">
+          <button class="save-button" id="saveSettings">Lagre endringer ♡</button>
+          <button class="reset-button" id="resetSettings">Tilbakestill standard</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Secret love letter -->
+  <div class="modal-backdrop" id="letterBackdrop" hidden>
+    <section class="letter-modal" role="dialog" aria-modal="true" aria-labelledby="letterTitle">
+      <button class="modal-close" id="letterClose" aria-label="Lukk">×</button>
+      <div class="letter-art">💌</div>
+      <p class="script letter-kicker">Bare til deg</p>
+      <h2 id="letterTitle">En liten hemmelighet…</h2>
+      <div class="letter-paper"><p id="letterBody"></p></div>
+      <button class="start-button" id="letterDone">Ååå, jeg er glad i deg ♡</button>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
